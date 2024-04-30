@@ -1,7 +1,7 @@
 <?php
 //This product includes PHP software, freely available from <http://www.php.net/software/>
 
-require_once('Connections/db.php');
+require_once ('Connections/db.php');
 
 // mysql_select_db($database_turnos, $turnos);
 // @mysqli_query("SET collation_connection = utf8_general_ci;");
@@ -64,6 +64,16 @@ $totalRows_RsllAMADOTV = mysqli_num_rows($RsllAMADOTV);
 	<script src="socket/socket.io.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
 
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+		crossorigin="anonymous"></script>
+
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
 		integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
@@ -75,6 +85,8 @@ $totalRows_RsllAMADOTV = mysqli_num_rows($RsllAMADOTV);
 		href="https://fonts.googleapis.com/css2?family=Catamaran:wght@100..900&family=Sarabun:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
 		rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@100..900&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
 	<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
 	<script>
@@ -189,38 +201,8 @@ $totalRows_RsllAMADOTV = mysqli_num_rows($RsllAMADOTV);
 
 <body>
 	<div class="containerTV">
-		<div style="display:flex; justify-content:space-between;padding: 25px 35px;">
-		<img src="images/3 - Elementos.png" width="200" alt="">
-		<img src="images/2 - Elementos.png" width="200" alt="">
-			
-			<!-- <img src="images/banner-laboratory.jpeg" width="full" alt="" style="width: 100%; "> -->
-
-		</div>
+		<img src="images/imagen-fondo.jpeg" style="width: 100%; height: 100%; z-index: -10; position: absolute" alt="">
 		<div class="contentTurns">
-			<div class="video">
-				<!-- para televisor <video id="myVideo" src="images/Videos/2Empresario.mp4" autoplay muted loop width=1200></video> -->
-				<!-- <video id="myVideo" src="images/Videos/2Empresario.mp4" autoplay muted loop width=500></video> -->
-				<img src="images/AVISO.jpeg" alt="" width="80%">
-			</div>
-			<!-- <div id="carouselVideoExample" class="carousel slide carousel-fade" data-bs-ride="carousel">
-				<div class="carousel-inner ">
-					<div class="carousel-item active">
-						<video class="img-fluid" autoplay loop muted width=900>
-							<source src="images/Videos/2Empresario.mp4" type="video/mp4" />
-						</video>
-					</div>
-					<div class="carousel-item">
-						<video class="img-fluid" autoplay loop muted width=900>
-							<source src="images/Videos/3Informacion.mp4" type="video/mp4" />
-						</video>
-					</div>
-					<div class="carousel-item">
-						<video class="img-fluid" autoplay loop muted width=900>
-							<source src="images/Videos/5Servicios.mp4" type="video/mp4" />
-						</video>
-					</div>
-				</div>
-			</div> -->
 			<form name="form1" method="post" action="">
 				<table id="turnero">
 					<thead>
@@ -260,9 +242,28 @@ $totalRows_RsllAMADOTV = mysqli_num_rows($RsllAMADOTV);
 			</form>
 		</div>
 		<div class="footerTV">
-			<img src="images/4 - Flechas.png" alt="">
-			<img src="images/3 - Elementos.png" alt="">
+			<div class="slider-text">
+				<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+					<div class="carousel-inner">
+						<div class="carousel-item active"
+							style="color:white; font-weight: bolder;font-size: 25px; text-align:center">
+							Exámenes de rutina y especializados</div>
+						<div class="carousel-item"
+							style="color:white; font-weight: bolder; font-size: 25px; text-align:center">
+							Citología - Glucometría - Pruebas de embarazo
+						</div>
+
+					</div>
+				</div>
+			</div>
+			<div
+				style="text-align: center; color: white; bottom: 0; position: fixed; right: 5%; font-weight: bolder; margin-bottom:15px; font-size: 25px">
+				Domicilios <br> 3238104349
+
+			</div>
+
 		</div>
+	</div>
 	</div>
 
 </body>
@@ -283,33 +284,40 @@ $totalRows_RsllAMADOTV = mysqli_num_rows($RsllAMADOTV);
 	}
 
 	.containerTV {
-		height: 100%;
-		width: 100%;
-		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
+		height: 100vh;
+		width: 100vw;
 		margin: 0;
 
 	}
-.tabla-llena{
-	background-color: aqua !important;
-}
-	.contentTurns {
+
+	.tabla-llena {
+		background-color: aqua !important;
+	}
+
+	.slider-text {
+		width: 60%;
+		height: 4rem;
+		bottom: 0;
+		position: fixed;
+		background-color: #157bba;
+		border-top-right-radius: 100px;
 		display: flex;
+		justify-content: center;
+		align-items: center
+	}
+
+	.contentTurns {
 		width: 100%;
-		max-height: 50%;
-		flex-direction: row;
-		align-items: center;
-		justify-content: space-between;
+		max-height: 60%;
+		right: -70%;
+		top: 9rem;
+		position: relative;
 	}
 
 	.footerTV {
-		display: flex;
-		flex-direction: row;
-		align-items: center;
-		justify-content: space-between;
-		height: fit-content;
-		padding: 25px 35px;
+		position: relative;
+		width: 100%;
+		height: 100%;
 	}
 
 	.video {
@@ -320,6 +328,7 @@ $totalRows_RsllAMADOTV = mysqli_num_rows($RsllAMADOTV);
 		align-items: center;
 
 	}
+
 	#myVideo {
 		border-top-right-radius: 15px;
 		border-bottom-right-radius: 15px;
@@ -336,14 +345,17 @@ $totalRows_RsllAMADOTV = mysqli_num_rows($RsllAMADOTV);
 	table {
 
 		max-width: 100%;
-		margin-left: 30px;
+		margin-left: 0px;
 		height: 100%;
 		border-collapse: separate;
 		border-spacing: 10px;
-		background: linear-gradient(to right, #b22727, #ff0000);
+		background: white;
 		border-top-left-radius: 30px;
 		border-bottom-left-radius: 30px;
-		padding-right: 30px;
+		border-color: #3bb1f2;
+		border-width: 7px;
+		border-style: solid;
+		padding: 15px 30px 15px 15px;
 
 
 	}
@@ -364,8 +376,8 @@ $totalRows_RsllAMADOTV = mysqli_num_rows($RsllAMADOTV);
 		border: none;
 		border-radius: 20px;
 		height: fit-content;
-		background-color: white;
-		color: #000;
+		background-color: #157bba;
+		color: white;
 		width: auto;
 
 	}
@@ -380,7 +392,7 @@ $totalRows_RsllAMADOTV = mysqli_num_rows($RsllAMADOTV);
 
 	#turno,
 	#modulo {
-		background: none !important;
+		background: #3bb1f2;
 		color: white;
 		border: 2px solid white;
 		font-size: 50px !important;
