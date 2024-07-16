@@ -201,7 +201,7 @@ $totalRows_RsllAMADOTV = mysqli_num_rows($RsllAMADOTV);
 
 <body>
 	<div class="containerTV">
-		<img src="images/imagen-fondo.jpeg" style="width: 100%; height: 100%; z-index: -10; position: absolute" alt="">
+		<img src="/imagen-fondo.jpeg" style="width: 100%; height: 100%; z-index: -10; position: absolute" alt="">
 		<div class="contentTurns">
 			<form name="form1" method="post" action="">
 				<table id="turnero">
